@@ -30,3 +30,15 @@ class Cart:
             else:
                 total_qty += int(item)  # fallback for old int-only data
         return total_qty
+    
+
+    def get_prods(self):
+        product_ids = self.cart.keys()
+        return Product.objects.filter(id__in=product_ids)
+    
+
+    def get_quants(self):
+        quantities = self.cart
+        return quantities
+        
+

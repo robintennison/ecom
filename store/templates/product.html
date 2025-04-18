@@ -51,10 +51,6 @@
         e.preventDefault();
         const productId = $('#add-cart').val();  // button's value
         const qty = $('#product_qty').val();     // dropdown value
-    
-        console.log("Sending Product ID:", productId);
-        console.log("Sending Quantity:", qty);
-    
         $.ajax({
             type: 'POST',
             url: '{% url "cart_add" %}',
